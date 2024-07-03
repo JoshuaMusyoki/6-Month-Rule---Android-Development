@@ -11,4 +11,9 @@ Dart has 9 Data types
 8. Symbols
 9. The value 'null'
 
+## Difference between var and dynamic
+1. Always aim to assign your variable the right data type
+2. Use var when you know it can only hold one type of data
+3. Use dynamic if the variable can hold any type of data
+
 

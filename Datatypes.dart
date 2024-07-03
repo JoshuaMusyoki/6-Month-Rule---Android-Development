@@ -16,7 +16,9 @@ void main(){
   print('Never odd or even'.startsWith('Never'));
   print('hello devs'.toUpperCase());
   print(''.isEmpty);
- 
+
+  print(bookTitles);
+  print(bookTitles.runtimeType);
 
 //  Booleans
 bool isLocationEnabled = false;
@@ -24,12 +26,18 @@ bool isLocationEnabled = false;
 if (!isLocationEnabled) {
   checkCurrentLocation();
 } else{
-  
+
 }
     // ignore: dead_code
     // return "Location Services Enabled";
 
 }
+
+// lists
+List bookTitles = ["Harry Potter", "Twilight", "XYZ"];
+// bookTitles.add(2);
+List prices = [3000, 2345.50, 0, 1500.55];
+
 
 void checkCurrentLocation() {
 }
