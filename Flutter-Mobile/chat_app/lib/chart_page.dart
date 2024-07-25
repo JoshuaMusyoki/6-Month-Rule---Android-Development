@@ -11,13 +11,13 @@ class ChatPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text("Hi Poojg"),
+        title: const Text("Hi Poojg"),
         actions: [
           IconButton(
               onPressed: (){
                 print("ICon Pressed");
               }, 
-              icon: Icon(Icons.logout
+              icon: const Icon(Icons.logout
               )
           )
         ],
@@ -35,7 +35,7 @@ class ChatPage extends StatelessWidget {
                       message: "Hello! This is Joshua");
             }),
           ),
-          ChatInput(),
+          const ChatInput(),
         ],
       ),
     );

@@ -15,12 +15,13 @@ class ChatApp extends StatelessWidget {
     Color buttonColors = Colors.blue;
     return  MaterialApp(
       title: "Chat App",
-      theme: ThemeData(primarySwatch: Colors.yellow,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.yellow,
-        ),
+      theme: ThemeData(primarySwatch: Colors.deepPurple,
+        // appBarTheme: const AppBarTheme(
+        //   backgroundColor: Colors.deepPurple,
+        // ),
       ),
-      home: CounterStateful(buttonColor: Colors.blue)
+      // home: CounterStateful(buttonColor: Colors.blue)
+      home: const LoginPage(),
     );
   }
 
