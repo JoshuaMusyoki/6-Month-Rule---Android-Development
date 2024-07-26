@@ -1,30 +1,49 @@
 import 'package:flutter/material.dart';
 
 class ChatInput extends StatelessWidget {
-  const ChatInput({super.key});
+   ChatInput({super.key});
 
+  final chatMessageController = TextEditingController();
+  void onSendButtonPressed(){
+    print('Chat Message: ${chatMessageController.text}');
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 100,
+      decoration: const BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20))
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          Expanded(
+              child:
+              TextField(
+                keyboardType: TextInputType.multiline,
+                maxLines: 5,
+                minLines: 1,
+                controller: chatMessageController,
+                textCapitalization: TextCapitalization.sentences,
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  hintText: "Type Your Message",
+                    hintStyle: TextStyle(color: Colors.blueGrey),
+                    border: InputBorder.none
+                ),
+              )),
           IconButton(
             onPressed: (){},
-            icon: Icon(
+            icon: const Icon(
               Icons.add,
               color: Colors.white,
             ),
           ),
           IconButton(
-              onPressed: (){},
-              icon: Icon(Icons.send))
+              onPressed: onSendButtonPressed,
+              icon: const Icon(Icons.send))
         ],
-      ),
-      decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(20))
       ),
     );
   }
