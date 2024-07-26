@@ -1,4 +1,7 @@
 import 'package:chat_app/chart_page.dart';
+import 'package:chat_app/utils/spaces.dart';
+import 'package:chat_app/utils/text_styles.dart';
+import 'package:chat_app/widgets/login_textfield.dart';
 import 'package:flutter/material.dart';
 
 
@@ -67,17 +70,16 @@ class LoginPage extends StatelessWidget {
                     color: Colors.green
                 ),
               ),
-              Image.network("https://3009709.youcanlearnit.net/Alien_LIL_131338.png",
+              Image.asset(
+                "assets/banner_image.png",
                 height: 200,
               ),
               Form(
                 key: _formKey,
                 child: Column(
                   children: [
-                    TextFormField(
-                      // onChanged: (value){
-                      //   print("value $value");
-                      // },
+                    LoginTextField(
+                      hintText: "Enter Your Username",
                       validator: (value) {
                         if (value!=null && value.isNotEmpty && value.length < 5) {
                           return "Your username should be more than 5";
@@ -87,15 +89,11 @@ class LoginPage extends StatelessWidget {
                         return null;
                       },
                       controller: usernameController,
-                      decoration: InputDecoration(
-                        hintText: 'Enter Your Username',
-                          hintStyle: TextStyle(color: Colors.blueGrey),
-                          border: OutlineInputBorder()
-                      ),
 
                     ),
-                    SizedBox(height: 24,),
-                    TextFormField(
+                    verticalSpacing(24),
+                    LoginTextField(
+                      hintText: "Enter Your Password",
                       validator: (value){
                         if(value !=null && value.isNotEmpty && value.length < 7){
                           return "Password should contain atleast 7 characters";
@@ -103,19 +101,14 @@ class LoginPage extends StatelessWidget {
                           return "Please Enter Password";
                         }
                       },
-                      obscureText: true,
+                      hasAsterics: true,
                       controller: passwordController,
-                      decoration: InputDecoration(
-                          hintText: 'Enter Your Password',
-                          hintStyle: TextStyle(color: Colors.blueGrey),
-                          border: OutlineInputBorder()
-                      ),
 
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 24,),
+              verticalSpacing(24),
               ElevatedButton(onPressed: (){
                 loginUser(context);
               },
