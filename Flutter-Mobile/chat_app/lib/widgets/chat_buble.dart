@@ -19,7 +19,10 @@ class ChatBubble extends StatelessWidget {
               '$message',
               style: TextStyle(fontSize: 24, color: Colors.white),
             ),
-            Image.network("https://picsum.photos/250?image=9", height: 200)
+            Image.network(
+                "https://picsum.photos/250?image=9",
+                height: 200
+            )
           ],
         ),
         margin: EdgeInsets.all(50),
